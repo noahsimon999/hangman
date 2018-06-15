@@ -3,9 +3,15 @@
 //    -styling-
 //game mechanics
     // create array of possible words
-
+    function hangman() {
+    
 
     var words = ["one", "two", "three", "four", "five", "six"];
+    var win = 0;
+    var loss = 0;
+    
+    document.getElementById("win").innerHTML = "Win: " + win;
+    document.getElementById("loss").innerHTML = "Loss: " + loss;
     // render blank spaces that can be filled in when guessed
 
     var randWord = Math.floor(Math.random()*words.length);
@@ -24,12 +30,10 @@
     var choices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
     "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
-    for(var i = 0; i < choices.length; i++) {
+    for(var i = 0; i < choices.length; i++) {    
         document.getElementById("choices").innerHTML = "Choices: " + choices;
     }
 
-    
-    
     
     // create winner array to check against
 
@@ -43,7 +47,6 @@
     var points = 0; 
     var guessedLetters = [];
     document.getElementById("chances").innerHTML = "Chances: " + chances;
-    document.getElementById("points").innerHTML = "Points: " + points;
     document.getElementById("output").innerHTML = "Your Progress " + spaces;
     document.getElementById("guessedLetters").innerHTML = "Guessed Letters: " + guessedLetters;
 
@@ -88,29 +91,33 @@
             if (winnerWord[i] === event.key) {
                 console.log("you win +1");
                 points++;
-                document.getElementById("points").innerHTML = "Points: " + points;
             }
         }
     
         // checks win or loss conditions
         if (chances === 0) {
             console.log("you lose");
-            document.write("Game Over!");
+            document.getElementById("winLose").innerHTML = "Play Again!";
+            document.getElementById("final").innerHTML = "Your Progress " + spaces;
+            loss++;
+       
         } else if (points === winnerWord.length) {
             console.log("you win the game");
-            
-            document.write("~~~Winner!!!~~~");
+            document.getElementById("winLose").innerHTML = "~~~Winner!!!~~~";
+            document.getElementById("final").innerHTML = "Your Progress " + spaces;
+            win++;
         }
         
         
     })
     
-    
+}
     // give the hangman lives, and create a mechanism to take them away
     // create game over/ new game screen
 
   
     
-
+  // var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    // var a = fruits.indexOf("Apple");
 
 
