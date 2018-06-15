@@ -8,7 +8,7 @@
     var words = ["one", "two", "three", "four", "five", "six"];
     // render blank spaces that can be filled in when guessed
 
-    var randWord = Math.round(Math.random()*words.length);
+    var randWord = Math.floor(Math.random()*words.length);
     console.log(randWord);
     var compChoice = words[randWord];
     console.log(compChoice);
@@ -40,35 +40,58 @@
         console.log(winnerWord);
     }
 
-    var lives = 5;
+    var chances = 5;
+    var win = winnerWord.length;
+    var points = 0; 
+    var guessedLetters = [];
+    document.getElementById("chances").innerHTML = "Chances: " + chances;
+    document.getElementById("points").innerHTML = "Points: " + points;
+    document.getElementById("output").innerHTML = "Your Progress " + spaces;
 
-    document.getElementById("lives").innerHTML = "Lives: " + lives;
-
+    //listens for a key press
     document.addEventListener('keydown', function (event) {
+
+        
+        //checks if it's in the winner word, if it is not a chance is lost
         console.log(winnerWord.includes(event.key))
         if(winnerWord.includes(event.key) === true) {
-            console.log(event.key);   
+            console.log(event.key);
+            guessedLetters.push(event.key);
+            console.log(guessedLetters);   
         } else {
             console.log(event.key);
-            lives--;
-            console.log(lives);
+            chances--;
+            document.getElementById("chances").innerHTML = "Chances: " + chances;
+            console.log(chances);
+            guessedLetters.push(event.key);
+            console.log(guessedLetters); 
         }
         
+        //checks if the keypress is in the word then replaces it and gives you a point, if correct.
         for(var i = 0; i < winnerWord.length; i++) {
             if(winnerWord[i] === event.key) {
                 spaces[i] = event.key;
                 console.log(spaces); 
                 document.getElementById("output").innerHTML = "Your Progress " + spaces;
             }
+            if (winnerWord[i] === event.key) {
+                console.log("you win +1");
+                points++;
+                document.getElementById("points").innerHTML = "Points: " + points;
+            }
         }
-
-        if (lives === 0) {
-            console.log("you lose")
+    
+        // checks win or loss conditions
+        if (chances === 0) {
+            console.log("you lose");
             document.write("Game Over!");
-        } else if (spaces === winnerWord) {
-            console.log("you win")
-            document.write("You Win!");
+        } else if (points === winnerWord.length) {
+            console.log("you win the game");
+            
+            document.write("~~~Winner!!!~~~");
         }
+        
+        
     })
     
     
