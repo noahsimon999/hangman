@@ -42,20 +42,32 @@
 
     var lives = 5;
 
+    document.getElementById("lives").innerHTML = "Lives: " + lives;
+
     document.addEventListener('keydown', function (event) {
         console.log(winnerWord.includes(event.key))
         if(winnerWord.includes(event.key) === true) {
-            console.log(event.key);
+            console.log(event.key);   
         } else {
             console.log(event.key);
             lives--;
+            console.log(lives);
         }
         
         for(var i = 0; i < winnerWord.length; i++) {
             if(winnerWord[i] === event.key) {
                 spaces[i] = event.key;
                 console.log(spaces); 
+                document.getElementById("output").innerHTML = "Your Progress " + spaces;
             }
+        }
+
+        if (lives === 0) {
+            console.log("you lose")
+            document.write("Game Over!");
+        } else if (spaces === winnerWord) {
+            console.log("you win")
+            document.write("You Win!");
         }
     })
     
