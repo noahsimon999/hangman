@@ -25,17 +25,16 @@ h4 {
 
 #gameArea {
     background-color: white;
+    color: black;
     opacity: .95;
     text-align: center;
     width: 500px;
+    height: 325px;
     margin: auto;
     position: fixed;
-    left: 700px;
+    left: 35%;
     top: 40%;
     border-radius: 25px;
     border: 1px solid black;
 }
 
-#output {
-    font
-}
