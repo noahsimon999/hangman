@@ -29,11 +29,11 @@ h4 {
     opacity: .95;
     text-align: center;
     width: 500px;
-    height: 325px;
+    height: 375px;
     margin: auto;
     position: fixed;
-    left: 35%;
-    top: 40%;
+    left: 30%;
+    top: 35%;
     border-radius: 25px;
     border: 1px solid black;
 }
