@@ -1,0 +1,41 @@
+body { 
+    background: lightblue url("../images/xmen.jpeg") no-repeat fixed center; 
+}
+
+h1 {
+    display: block;
+    font-size: 3em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+h4 {
+    display: block;
+    font-size: 1.25em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+
+}
+
+#gameArea {
+    background-color: white;
+    opacity: .95;
+    text-align: center;
+    width: 500px;
+    margin: auto;
+    position: fixed;
+    left: 700px;
+    top: 40%;
+    border-radius: 25px;
+    border: 1px solid black;
+}
+
+#output {
+    font
+}
