@@ -29,11 +29,10 @@ h4 {
     opacity: .95;
     text-align: center;
     width: 550px;
-    height: 385px;
+    height: 450px;
     margin: auto;
-    position: fixed;
-    left: 35%;
-    top: 35%;
+    position: relative;
+    top: 70%;
     border-radius: 25px;
     border: 1px solid black;
 }
@@ -65,7 +64,7 @@ h4 {
         width: 550px;
         height: 385px;
         position: fixed;
-        left: 20%;
+        margin: auto;
         top: 35%;
     }
 }
@@ -76,7 +75,7 @@ h4 {
         width: 550px;
         height: 385px;
         position: fixed;
-        left: 15%;
+        margin: auto;
         top: 35%;
     }
 }
@@ -87,7 +86,7 @@ h4 {
         width: 300px;
         height: 450px;
         position: fixed;
-        left: 5%;
+        margin: auto;
         top: 35%;
     }
 }
