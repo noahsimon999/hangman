@@ -28,13 +28,49 @@ h4 {
     color: black;
     opacity: .95;
     text-align: center;
-    width: 500px;
+    width: 550px;
     height: 375px;
     margin: auto;
     position: fixed;
-    left: 30%;
+    left: 35%;
     top: 35%;
     border-radius: 25px;
     border: 1px solid black;
 }
 
+#rules {
+    color: red;
+}
+
+@media only screen and (max-width: 980px) {
+    
+    #gameArea {
+        width: 550px;
+        height: 375px;
+        position: fixed;
+        left: 20%;
+        top: 35%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    #gameArea {
+        width: 550px;
+        height: 375px;
+        position: fixed;
+        left: 15%;
+        top: 35%;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+
+    #gameArea {
+        width: 300px;
+        height: 400px;
+        position: fixed;
+        left: 5%;
+        top: 35%;
+    }
+}

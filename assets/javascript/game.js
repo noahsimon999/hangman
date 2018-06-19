@@ -8,13 +8,17 @@
 
 // create array of possible words   
 
-    var words = ["one", "two", "three", "four", "five", "six"];
+    var words = ["Beast", "Colossus", "Dazzler", "Havok", "Warpath", "Cyclops", "Iceman", "Nightcrawler", "Pyro", "Rogue", "Storm", "Jean Grey", "Gambit", "Wolverine", "Professor X", "Phoenix", "Angel", "Magneto", "Jubilee"];
+
+    for(var i = 0; i < words.length; i++){
+        words[i] = words[i].toUpperCase();
+    }
+
     var win = 0;
     var loss = 0;
   
     document.getElementById("win").innerHTML = "Win: " + win;
     document.getElementById("loss").innerHTML = "Loss: " + loss;
-    
 
     // choose random word and render blank spaces that can be filled in when guessed
 
@@ -24,12 +28,15 @@
     var spaces = [];
     for(var j = 0; j < compChoice.length; j++) {
         spaces.push("_ ");
-        
     }
 
     // display all possible letters 
     var choices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
     "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+    for(var i = 0; i < choices.length; i++){
+        choices[i] = choices[i].toUpperCase();
+    }
 
     for(var i = 0; i < choices.length; i++) {    
         document.getElementById("choices").innerHTML = "Choices: " + choices;
@@ -64,10 +71,15 @@
         // display all possible letters 
              choices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
             "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-        
+            
+            for(var i = 0; i < choices.length; i++){
+                choices[i] = choices[i].toUpperCase();
+            }
+
             for(var i = 0; i < choices.length; i++) {    
                 document.getElementById("choices").innerHTML = "Choices: " + choices;
             }
+            
             // create winner array to check against
              winnerWord = [];
             for(var i = 0; i < compChoice.length; i++) {
@@ -84,6 +96,7 @@
 
     //listens for a key press
     document.addEventListener('keydown', function (event) {
+  
         //checks if it's in the winner word
         console.log(winnerWord.includes(event.key))
         //checks if the letter has already been guessed.
