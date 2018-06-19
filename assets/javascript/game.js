@@ -26,8 +26,6 @@
         spaces.push("_ ");
         
     }
-    console.log(spaces);
-
 
     // display all possible letters 
     var choices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
@@ -36,7 +34,6 @@
     for(var i = 0; i < choices.length; i++) {    
         document.getElementById("choices").innerHTML = "Choices: " + choices;
     }
-
     
     // create winner array to check against
 
@@ -44,8 +41,6 @@
     for(var i = 0; i < compChoice.length; i++) {
         winnerWord.push(compChoice[i].charAt(0))
     }
-    console.log(winnerWord);
-
 
     // console
     var chances = 5;
@@ -61,12 +56,11 @@
         // render blank spaces that can be filled in when guessed
              randWord = Math.floor(Math.random()*words.length);
              compChoice = words[randWord];
-            console.log(compChoice);
+            console.log("reset " + compChoice);
              spaces = [];
             for(var j = 0; j < compChoice.length; j++) {
                 spaces.push("_ ");
             }
-            console.log(spaces);
         // display all possible letters 
              choices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
             "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
@@ -79,24 +73,17 @@
             for(var i = 0; i < compChoice.length; i++) {
                 winnerWord.push(compChoice[i].charAt(0))
             }
-            console.log(winnerWord);
              chances = 5;
              points = 0; 
              guessedLetters = [];
             document.getElementById("chances").innerHTML = "Chances: " + chances;
             document.getElementById("output").innerHTML = spaces.join(" ");
             document.getElementById("guessedLetters").innerHTML = "Guessed Letters: " + guessedLetters;
-            console.log(guessedLetters);
-            console.log("reset points " + points);
-            console.log("reset chances " + chances);       
         }
 
 
     //listens for a key press
     document.addEventListener('keydown', function (event) {
-        console.log("points: " + points)
-        console.log(guessedLetters)
-        console.log(winnerWord)
         //checks if it's in the winner word
         console.log(winnerWord.includes(event.key))
         //checks if the letter has already been guessed.
@@ -107,22 +94,16 @@
                 return;
             }
         }
-        console.log(guessedLetters);
         
 
         //checks if the user input is in the word or takes away a chance
         if(winnerWord.includes(event.key) === true) {
-            console.log(event.key);
             guessedLetters.push(event.key);
-            console.log(guessedLetters);
             document.getElementById("guessedLetters").innerHTML = "Guessed Letters: " + guessedLetters;   
         } else {
-            console.log(event.key);
             chances--;
             document.getElementById("chances").innerHTML = "Chances: " + chances;
-            console.log("chances left: " + chances);
             guessedLetters.push(event.key);
-            console.log(guessedLetters);
             document.getElementById("guessedLetters").innerHTML = "Guessed Letters: " + guessedLetters;
         }
         
@@ -131,11 +112,9 @@
         for(var i = 0; i < winnerWord.length; i++) {
             if(winnerWord[i] === event.key) {
                 spaces[i] = event.key;
-                console.log(spaces); 
                 document.getElementById("output").innerHTML = spaces.join(" ");
             }
             if (winnerWord[i] === event.key) {
-                console.log("you win +1");
                 points++;
             }
         }
@@ -147,8 +126,6 @@
             document.getElementById("winLose").innerHTML = "Play Again!";
             loss++;
             document.getElementById("loss").innerHTML = "Loss: " + loss;
-            
-     
             reset();
            
 
@@ -157,8 +134,6 @@
             document.getElementById("winLose").innerHTML = "~~~Winner!!!~~~";
             win++;
             document.getElementById("win").innerHTML = "Win: " + win;
-            
-   
             reset();
         }
         
