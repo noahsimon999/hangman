@@ -126,7 +126,7 @@
             document.getElementById("winLose").innerHTML = "Play Again!";
             loss++;
             document.getElementById("loss").innerHTML = "Loss: " + loss;
-            reset();
+            setTimeout(reset, 1000)
            
 
         } else if (points === winnerWord.length) {
@@ -134,7 +134,7 @@
             document.getElementById("winLose").innerHTML = "~~~Winner!!!~~~";
             win++;
             document.getElementById("win").innerHTML = "Win: " + win;
-            reset();
+            setTimeout(reset, 1000)
         }
         
         
