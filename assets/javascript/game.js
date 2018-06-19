@@ -31,12 +31,8 @@
     }
 
     // display all possible letters 
-    var choices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
-    "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-
-    for(var i = 0; i < choices.length; i++){
-        choices[i] = choices[i].toUpperCase();
-    }
+    var choices = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
+    "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
     for(var i = 0; i < choices.length; i++) {    
         document.getElementById("choices").innerHTML = "Choices: " + choices;
@@ -61,33 +57,30 @@
     //reset
     function reset() {
         // render blank spaces that can be filled in when guessed
-             randWord = Math.floor(Math.random()*words.length);
-             compChoice = words[randWord];
+            randWord = Math.floor(Math.random()*words.length);
+            compChoice = words[randWord];
             console.log("reset " + compChoice);
-             spaces = [];
+            spaces = [];
             for(var j = 0; j < compChoice.length; j++) {
                 spaces.push("_ ");
             }
-        // display all possible letters 
-             choices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
-            "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-            
-            for(var i = 0; i < choices.length; i++){
-                choices[i] = choices[i].toUpperCase();
-            }
 
+        // display all possible letters 
+            choices = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
+            "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+            
             for(var i = 0; i < choices.length; i++) {    
                 document.getElementById("choices").innerHTML = "Choices: " + choices;
             }
-            
+
             // create winner array to check against
-             winnerWord = [];
+            winnerWord = [];
             for(var i = 0; i < compChoice.length; i++) {
                 winnerWord.push(compChoice[i].charAt(0))
             }
-             chances = 5;
-             points = 0; 
-             guessedLetters = [];
+            chances = 5;
+            points = 0; 
+            guessedLetters = [];
             document.getElementById("chances").innerHTML = "Chances: " + chances;
             document.getElementById("output").innerHTML = spaces.join(" ");
             document.getElementById("guessedLetters").innerHTML = "Guessed Letters: " + guessedLetters;
