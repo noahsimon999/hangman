@@ -63,7 +63,7 @@ h4 {
     #gameArea {
         width: 550px;
         height: 385px;
-        position: fixed;
+        position: relative;
         margin: auto;
         top: 35%;
     }
@@ -73,8 +73,8 @@ h4 {
 
     #gameArea {
         width: 550px;
-        height: 385px;
-        position: fixed;
+        height: 450px;
+        position: relative;
         margin: auto;
         top: 35%;
     }
@@ -84,8 +84,8 @@ h4 {
 
     #gameArea {
         width: 300px;
-        height: 450px;
-        position: fixed;
+        height:500px;
+        position: relative;
         margin: auto;
         top: 35%;
     }
