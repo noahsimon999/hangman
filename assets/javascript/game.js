@@ -89,7 +89,10 @@
 
     //listens for a key press
     document.addEventListener('keydown', function (event) {
-  
+        if (points < 0) {
+            reset();
+            return;
+        }
         //checks if it's in the winner word
         console.log(winnerWord.includes(event.key))
         //checks if the letter has already been guessed.
