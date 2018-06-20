@@ -1,5 +1,6 @@
 body { 
-    background: lightblue url("../images/xmen.jpeg") no-repeat fixed center; 
+    background: url("../images/xmen.jpeg") no-repeat fixed center; 
+    background-size: 100% 100%%;
 }
 
 h1 {
@@ -31,8 +32,10 @@ h4 {
     width: 550px;
     height: 450px;
     margin: auto;
-    position: relative;
-    top: 70%;
+    position: fixed;
+    top:30%;
+    left: 35%;
+
     border-radius: 25px;
     border: 1px solid black;
 }
@@ -59,29 +62,31 @@ h4 {
 
 
 @media only screen and (max-width: 980px) {
-    
+    h1 {color: red}
     #gameArea {
         width: 550px;
         height: 385px;
         position: relative;
         margin: auto;
         top: 35%;
+        left: 20%;
     }
 }
 
 @media only screen and (max-width: 768px) {
-
+    h1 {color: blue}
     #gameArea {
         width: 550px;
         height: 450px;
         position: relative;
         margin: auto;
         top: 35%;
+        left: 8%;
     }
 }
 
 @media only screen and (max-width: 640px) {
-
+    h1 {color: green}
     #gameArea {
         width: 300px;
         height:500px;
